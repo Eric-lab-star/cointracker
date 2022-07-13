@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { getCoin, getRecentPrice } from "./api";
-import { Coin, Detail, OCHLC } from "./cointInterface";
+import { getCoin } from "./api";
+import { Coin, Detail } from "./cointInterface";
 import { DateTime } from "luxon";
 
 const Title = styled.h1`
@@ -77,6 +77,23 @@ const Official = styled.div`
   }
 `;
 
+const MoreInfo = styled.div`
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  a {
+    box-shadow: 2px 2px 2px gray;
+    cursor: pointer;
+    padding: 0.3rem 0.4rem;
+    border-radius: 4px;
+    color: ${(props) => props.theme.text};
+    background-color: ${(props) => props.theme.accent};
+    :hover {
+      background-color: ${(props) => props.theme.hoveredBg};
+    }
+  }
+`;
 const CoinDetail = () => {
   const { id } = useParams();
   const state = useLocation().state as Coin | undefined;
@@ -85,10 +102,7 @@ const CoinDetail = () => {
     ["Coin", "Detail"],
     () => getCoin(id)
   );
-  const { data: price, isLoading: isPrice } = useQuery<OCHLC>(
-    ["Coin", "OHLC"],
-    () => getRecentPrice(id)
-  );
+
   return (
     <div>
       <div>
@@ -137,7 +151,6 @@ const CoinDetail = () => {
             </span>
           </TopBadge>
         </TopBar>
-
         <Description>
           <h1>Coin Description</h1>
           <p>{isCoin ? "Loading" : coin?.description}</p>
@@ -171,6 +184,11 @@ const CoinDetail = () => {
           Youtube: <a href={`${coin?.links.youtube}`}>{coin?.links.youtube}</a>
         </Official>
       </div>
+      <MoreInfo>
+        <Link to={"price"}>Price</Link>
+        <Link to={"price"}>Chart</Link>
+      </MoreInfo>
+      <Outlet />
     </div>
   );
 };
