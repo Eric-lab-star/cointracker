@@ -7,5 +7,6 @@ declare module "styled-components" {
     hoveredBg: string;
     accent: string;
     text: string;
+    mainText: string;
   }
 }

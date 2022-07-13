@@ -9,7 +9,10 @@ const Container = styled.div`
   padding-top: 2rem;
 `;
 const NavBar = styled.div`
+  box-shadow: 2px 2px 3px gray;
+  box-sizing: border-box;
   display: grid;
+  width: 25rem;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   font-size: 1.2rem;
@@ -19,13 +22,12 @@ const NavBar = styled.div`
   margin-bottom: 1rem;
 `;
 const Icon = styled.div`
-  height: 3.5rem;
+  height: 3rem;
   margin-right: 12px;
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   :hover {
     cursor: pointer;
     svg,
@@ -38,15 +40,21 @@ const Icon = styled.div`
     border-radius: 50%;
     background-color: ${(props) => props.theme.accent};
     color: ${(props) => props.theme.text};
+    box-shadow: 1px 1px 3px gray;
   }
   span {
     color: ${(props) => props.theme.accent};
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
   }
 `;
 const Page = styled.div`
+  box-shadow: 2px 2px 3px gray;
   background-color: ${(props) => props.theme.block};
+  box-sizing: border-box;
   border-radius: 0.4rem;
-  padding: 10px 10px;
+  padding: 1rem 2rem;
+  max-width: 25rem;
 `;
 const Layout = () => {
   const nav = useNavigate();

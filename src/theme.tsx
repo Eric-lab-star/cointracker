@@ -6,4 +6,5 @@ export const lightTheme: DefaultTheme = {
   text: "white",
   hoveredText: "#e17055",
   hoveredBg: "#d63031",
+  mainText: "#222f3e",
 };
