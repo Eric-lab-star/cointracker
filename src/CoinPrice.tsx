@@ -6,6 +6,7 @@ import { OCHLC } from "./cointInterface";
 
 const PriceGrid = styled.div`
   display: grid;
+  font-size: 0.8rem;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   gap: 1rem;

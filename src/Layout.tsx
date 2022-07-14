@@ -1,6 +1,5 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import CoinList from "./CoinList";
 
 const Container = styled.div`
   display: flex;

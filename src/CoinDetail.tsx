@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
-import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { getCoin } from "./api";
-import { Coin, Detail } from "./cointInterface";
+import { Detail } from "./cointInterface";
 import { DateTime } from "luxon";
 
 const Title = styled.h1`
@@ -83,6 +83,9 @@ const Official = styled.div`
 `;
 
 const MoreInfo = styled.div`
+  font-family: liebedoris, sans-serif;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
   margin: 1rem 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -186,7 +189,9 @@ const CoinDetail = () => {
 
       <MoreInfo>
         <Link to={"price"}>Price</Link>
-        <Link to={"chart"}>Chart</Link>
+        <Link to={"chart"} state={coin?.symbol}>
+          Chart
+        </Link>
       </MoreInfo>
       <Outlet />
     </div>

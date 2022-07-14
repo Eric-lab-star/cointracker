@@ -19,3 +19,15 @@ export async function getRecentPrice(coinId: string | undefined) {
   const json = response.json();
   return json;
 }
+
+export async function getChartData(sym: string | undefined) {
+  const week = 86000000;
+  const td = Date.now();
+  const start = new Date(td - week).toISOString();
+  const end = new Date(td).toISOString();
+  const response = await fetch(
+    `https://api.coinpaprika.com/v1/coins/${sym}/ohlcv/historical?start=${start}&end=${end}`
+  );
+  const json = await response.json();
+  return json;
+}
