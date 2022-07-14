@@ -1,12 +1,12 @@
 import { useQuery } from "react-query";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
   VictoryChart,
   VictoryAxis,
   VictoryCandlestick,
   VictoryTheme,
 } from "victory";
-import { ChartData, OCHLC } from "./cointInterface";
+import { OCHLC } from "./cointInterface";
 
 import styled from "styled-components";
 import { getChartData } from "./api";

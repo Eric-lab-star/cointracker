@@ -7,6 +7,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 2rem;
+  background-color: white;
 `;
 const NavBar = styled.div`
   box-shadow: 2px 2px 3px gray;

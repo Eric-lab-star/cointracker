@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import App from "./App";
-import { lightTheme } from "./theme";
+import { lightTheme, darkTheme } from "./theme";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -37,7 +37,8 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	font-family: itc-avant-garde-gothic-pro, sans-serif;
-	color: ${(props) => props.theme.text}
+	color:white;
+
 }
 ol, ul {
 	list-style: none;
@@ -73,9 +74,7 @@ a:visited{
 const client = new QueryClient();
 root.render(
   <QueryClientProvider client={client}>
-    <ThemeProvider theme={lightTheme}>
-      <GlobalCss />
-      <App />
-    </ThemeProvider>
+    <GlobalCss />
+    <App />
   </QueryClientProvider>
 );
