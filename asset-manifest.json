@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/eric-lab-star.github.io/cointracker/static/js/main.f36d0e0c.js",
-    "index.html": "/eric-lab-star.github.io/cointracker/index.html",
-    "main.f36d0e0c.js.map": "/eric-lab-star.github.io/cointracker/static/js/main.f36d0e0c.js.map"
+    "main.js": "/Eric-Kim.github.io/cointracker/static/js/main.e3db8025.js",
+    "index.html": "/Eric-Kim.github.io/cointracker/index.html",
+    "main.e3db8025.js.map": "/Eric-Kim.github.io/cointracker/static/js/main.e3db8025.js.map"
   },
   "entrypoints": [
-    "static/js/main.f36d0e0c.js"
+    "static/js/main.e3db8025.js"
   ]
 }
