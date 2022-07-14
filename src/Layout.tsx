@@ -1,5 +1,6 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import CoinList from "./CoinList";
 
 const Container = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const NavBar = styled.div`
   box-shadow: 2px 2px 3px gray;
   box-sizing: border-box;
   display: grid;
-  width: 25rem;
+  width: 20rem;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   font-size: 1.2rem;
@@ -30,9 +31,11 @@ const Icon = styled.div`
   align-items: center;
   :hover {
     cursor: pointer;
-    svg,
     span {
       color: ${(props) => props.theme.hoveredText};
+    }
+    svg {
+      color: ${(props) => props.theme.hoveredBg};
     }
   }
   svg {
@@ -43,7 +46,7 @@ const Icon = styled.div`
     box-shadow: 1px 1px 3px gray;
   }
   span {
-    color: ${(props) => props.theme.accent};
+    color: ${(props) => props.theme.text};
     font-size: 0.7rem;
     margin-top: 0.3rem;
   }
@@ -53,8 +56,9 @@ const Page = styled.div`
   background-color: ${(props) => props.theme.block};
   box-sizing: border-box;
   border-radius: 0.4rem;
-  padding: 1rem 2rem;
-  max-width: 25rem;
+  padding: 1rem 1.4rem;
+  max-width: 20rem;
+  margin-bottom: 1rem;
 `;
 const Layout = () => {
   const nav = useNavigate();

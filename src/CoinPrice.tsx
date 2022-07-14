@@ -10,9 +10,8 @@ const PriceGrid = styled.div`
   justify-items: center;
   gap: 1rem;
   margin: 0.7rem 0;
-  color: ${(props) => props.theme.mainText};
   padding-bottom: 5px;
-  border-bottom: 1px dashed gray;
+  border-bottom: 1px dashed ${(props) => props.theme.text};
   :last-child {
     border-bottom: none;
   }

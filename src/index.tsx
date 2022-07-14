@@ -36,6 +36,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: itc-avant-garde-gothic-pro, sans-serif;
+	color: ${(props) => props.theme.text}
 }
 ol, ul {
 	list-style: none;
@@ -55,13 +57,14 @@ table {
 a{
 	text-decoration: none;
 	outline: none;
-	color: black;
+	color: inherit;
 }
 a:active{
 	text-decoration: none;
+	color:inherit;
 }
 a:visited{
-	color:black;
+	color:inherit;
 }
 
 
